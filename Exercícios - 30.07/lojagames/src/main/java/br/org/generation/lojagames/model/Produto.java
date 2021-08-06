@@ -35,8 +35,12 @@ public class Produto {
 	private Date date = new java.sql.Date(System.currentTimeMillis());
 	
 	@ManyToOne	
-	@JsonIgnoreProperties("tb_produtos")
-	private Categoria tb_categoria;
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
+	
+	@ManyToOne	
+	@JsonIgnoreProperties("usuario")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -78,12 +82,20 @@ public class Produto {
 		this.date = date;
 	}
 
-	public Categoria getTb_categoria() {
-		return tb_categoria;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setTb_categoria(Categoria tb_categoria) {
-		this.tb_categoria = tb_categoria;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
-		
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 }

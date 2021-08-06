@@ -29,10 +29,10 @@ public class Categoria {
 	@NotNull(message = "O atributo tipo não pode ser nulo!")
 	private String tipo;
 	
-	@OneToMany(mappedBy = "tb_categoria", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("tb_categoria")
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoria")
 	// Cria uma lista de postagens
-	private List<Produto> tb_produtos;
+	private List<Produto> produto;
 
 	public long getId() {
 		return Id;
@@ -50,12 +50,14 @@ public class Categoria {
 		this.tipo = tipo;
 	}
 
-	public List<Produto> getTb_produtos() {
-		return tb_produtos;
+	public List<Produto> getProduto() {
+		return produto;
 	}
 
-	public void setTb_produtos(List<Produto> tb_produtos) {
-		this.tb_produtos = tb_produtos;
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
-	
+
 }
+	
+
